@@ -444,26 +444,28 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 80rem; /* Increased to match grid width */
   margin: 3rem auto 0 auto;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem; /* Reduced padding for mobile */
   background: linear-gradient(to bottom, #f8fafc, #ffffff);
   border: 1px solid var(--slate-200);
   border-radius: 1.5rem;
   position: relative;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
+@media (min-width: 768px) { .market-desc-box { padding: 3rem 2rem; } }
 
 .market-desc-box::before {
   content: '“';
   font-family: serif;
-  font-size: 8rem;
+  font-size: 6rem; /* Reduced for mobile */
   color: var(--blue-100);
   position: absolute;
   top: -1rem;
-  left: 2rem;
+  left: 1rem;
   line-height: 1;
   opacity: 0.5;
   pointer-events: none;
 }
+@media (min-width: 768px) { .market-desc-box::before { font-size: 8rem; left: 2rem; } }
 
 .market-desc-text {
   font-size: 1.25rem;
@@ -659,6 +661,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* Enable horizontal scroll on mobile */
+  -webkit-overflow-scrolling: touch;
 }
 
 .table-header {
@@ -668,22 +672,30 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--slate-200);
   font-weight: 600;
   color: var(--slate-700);
+  min-width: 600px; /* Ensure minimum width for readability */
 }
 
 .table-row {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1.5fr;
   border-bottom: 1px solid var(--slate-100);
+  min-width: 600px; /* Ensure minimum width for readability */
 }
 .table-row:last-child { border-bottom: none; }
 
 .table-cell {
-  padding: 1.5rem;
-  font-size: 1.25rem; /* Increased font size */
+  padding: 1rem; /* Reduced padding for mobile */
+  font-size: 1rem; /* Reduced font size for mobile */
   text-align: center; /* Center text */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (min-width: 768px) { 
+  .table-cell { 
+    padding: 1.5rem; 
+    font-size: 1.25rem; 
+  } 
 }
 
 /* Cases Section */
@@ -870,10 +882,11 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     padding: 0;
     height: 100%;
-    min-height: 500px; /* Increased height for reports */
+    min-height: 300px; /* Reduced height for mobile */
     display: flex;
     flex-direction: column;
 }
+@media (min-width: 768px) { .report-carousel-col { min-height: 500px; } }
 
 .carousel-track-container {
     height: 100%;
@@ -1040,12 +1053,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .trend-text-content h3 {
     font-family: 'Noto Serif TC', serif;
-    font-size: 2.5rem;
+    font-size: 1.75rem; /* Reduced for mobile */
     font-weight: 700;
     color: var(--slate-900);
     margin-bottom: 0.25rem; /* Reduced from 0.5rem */
     letter-spacing: -0.025em;
 }
+@media (min-width: 768px) { .trend-text-content h3 { font-size: 2.5rem; } }
 
 .trend-text-content .trend-subtitle {
     font-size: 1.125rem;
